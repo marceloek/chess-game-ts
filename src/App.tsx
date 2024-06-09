@@ -1,5 +1,4 @@
 import '@/styles/globals.css'
-import '@fontsource/roboto'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
