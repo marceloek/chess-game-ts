@@ -1,6 +1,17 @@
 {
   "name": "chess-game-ts",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple chess game, built with React, Tailwind CSS and TypeScript",
+  "keywords": [
+    "chess",
+    "game",
+    "react",
+    "tailwindcss",
+    "typescript"
+  ],
+  "author": "Marcelo Knob",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
