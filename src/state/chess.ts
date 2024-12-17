@@ -1,12 +1,11 @@
-import { create, StateCreator } from 'zustand'
-import { persist } from 'zustand/middleware'
-
 import type {
   IChessData,
   IChessLocation,
   IChessPiece,
 } from '@/components/chess/types'
 import { createChess } from '@/components/chess/utils'
+import { type StateCreator, create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 interface ChessState {
   data: IChessData

@@ -1,13 +1,12 @@
 import {
+  type IconDefinition,
   faChessBishop,
   faChessKing,
   faChessKnight,
   faChessPawn,
   faChessQueen,
   faChessRook,
-  IconDefinition,
 } from '@fortawesome/free-solid-svg-icons'
-
 import type {
   IChessPiece,
   IChessPieceColor,
