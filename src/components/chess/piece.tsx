@@ -14,7 +14,7 @@ export function ChessPiece(props: ChessPieceProps) {
       <div
         onClick={onClick}
         onKeyUp={() => undefined}
-        className="md:text-5xl text-xl text-center size-full hover:cursor-pointer hover:opacity-50 hover:transition-all"
+        className="md:text-5xl text-2xl grid place-items-center size-full hover:cursor-pointer hover:opacity-50 hover:transition-all"
       >
         {chessPieceByPosition[piecePosition]}
       </div>
