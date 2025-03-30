@@ -22,7 +22,7 @@ export function ChessBoard() {
   }
 
   return (
-    <div className="grid aspect-square max-w-[648px] grid-rows-8 rounded-md border-4 border-slate-700">
+    <div className="grid aspect-square flex-1 max-w-162 grid-rows-8 rounded-md border-4 border-slate-700">
       {chessRowCells.map((_item, row) => {
         return (
           <div key={crypto.randomUUID()} className="grid grid-cols-8">

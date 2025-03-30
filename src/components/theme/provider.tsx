@@ -1,11 +1,4 @@
-import {
-  type ReactNode,
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { type ReactNode, createContext, use, useEffect, useState } from 'react'
 
 type Theme = 'dark' | 'light' | 'system'
 
@@ -55,15 +48,13 @@ export function ThemeProvider({
     root.classList.add(theme)
   }, [theme])
 
-  const value = useMemo(() => {
-    return {
-      theme,
-      setTheme: (theme: Theme) => {
-        localStorage.setItem(storageKey, theme)
-        setTheme(theme)
-      },
-    }
-  }, [storageKey, theme])
+  const value = {
+    theme,
+    setTheme: (theme: Theme) => {
+      localStorage.setItem(storageKey, theme)
+      setTheme(theme)
+    },
+  }
 
   return (
     <ThemeProviderContext.Provider {...props} value={value}>
@@ -73,7 +64,7 @@ export function ThemeProvider({
 }
 
 export const useTheme = () => {
-  const context = useContext(ThemeProviderContext)
+  const context = use(ThemeProviderContext)
 
   if (context === undefined)
     throw new Error('useTheme must be used within a ThemeProvider')

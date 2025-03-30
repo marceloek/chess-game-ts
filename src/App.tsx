@@ -1,3 +1,5 @@
+import './index.css'
+
 import { ThemeProvider } from '@/components/theme/provider'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { Home } from './pages/home'

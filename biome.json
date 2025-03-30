@@ -20,13 +20,6 @@
     "enabled": true,
     "rules": {
       "recommended": true,
-      "nursery": {
-        "useSortedClasses": {
-          "fix": "safe",
-          "level": "warn",
-          "options": {}
-        }
-      },
       "style": {
         "useConst": "warn",
         "useTemplate": "warn"
