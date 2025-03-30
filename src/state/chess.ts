@@ -33,8 +33,8 @@ const chessStore: StateCreator<ChessStore> = (set) => ({
   },
 
   location: [
-    createChess.main(),
-    createChess.pawn(),
+    createChess.main('black'),
+    createChess.pawn('black'),
     createChess.empty(),
     createChess.empty(),
     createChess.empty(),
@@ -43,7 +43,7 @@ const chessStore: StateCreator<ChessStore> = (set) => ({
     createChess.main('white'),
   ],
   getMovementOptions: (piece, location) => {
-    console.log('boa jogada:', piece, location)
+    console.log('Boa jogada:', piece, location)
 
     set((state) => {
       return {

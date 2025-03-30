@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import type { IChessPiecePosition } from './types'
 import { chessPieceByPosition } from './utils'
 
@@ -13,11 +11,13 @@ export function ChessPiece(props: ChessPieceProps) {
 
   return (
     piecePosition && (
-      <FontAwesomeIcon
-        icon={chessPieceByPosition[piecePosition]}
-        className="block aspect-square size-full hover:cursor-pointer hover:opacity-50 hover:transition-all"
+      <div
         onClick={onClick}
-      />
+        onKeyUp={() => undefined}
+        className="md:text-5xl text-xl text-center size-full hover:cursor-pointer hover:opacity-50 hover:transition-all"
+      >
+        {chessPieceByPosition[piecePosition]}
+      </div>
     )
   )
 }

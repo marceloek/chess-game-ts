@@ -12,7 +12,7 @@ export function ChessCellSubtitle(props: Props) {
   return (
     <span
       className={cn(
-        'absolute p-1 text-emerald-700 leading-none',
+        'absolute p-1 text-emerald-700 leading-none md:text-base text-xs',
         position === 'left' ? 'top-0 left-0' : 'right-0 bottom-0',
       )}
     >

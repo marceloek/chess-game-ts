@@ -13,7 +13,7 @@ export function ChessBoard() {
   const chessLocation = useChessLocationState()
   const { get } = useChessLocationActions()
 
-  const handleMovement: IChessPieceMovement = (piece, color, location) => {
+  const onMovement: IChessPieceMovement = (piece, color, location) => {
     if (color !== chessData.color) {
       return
     }
@@ -35,7 +35,7 @@ export function ChessBoard() {
                   location={[row, col]}
                   piece={piece}
                   isSelected={piece ? chessData.piece === piece : false}
-                  handleMovement={handleMovement}
+                  onMovement={onMovement}
                 />
               )
             })}

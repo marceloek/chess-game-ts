@@ -1,12 +1,3 @@
-import {
-  type IconDefinition,
-  faChessBishop,
-  faChessKing,
-  faChessKnight,
-  faChessPawn,
-  faChessQueen,
-  faChessRook,
-} from '@fortawesome/free-solid-svg-icons'
 import type {
   IChessPiece,
   IChessPieceColor,
@@ -14,13 +5,13 @@ import type {
   IChessPiecePosition,
 } from './types'
 
-const chessPieceByPosition: Record<IChessPiecePosition, IconDefinition> = {
-  pawn: faChessPawn,
-  rook: faChessRook,
-  knight: faChessKnight,
-  bishop: faChessBishop,
-  queen: faChessQueen,
-  king: faChessKing,
+const chessPieceByPosition: Record<IChessPiecePosition, string> = {
+  pawn: '♟',
+  rook: '♜',
+  knight: '♞',
+  bishop: '♝',
+  queen: '♛',
+  king: '♚',
 }
 
 const chessRowCells = Array.from<undefined>({ length: 8 })
@@ -51,18 +42,22 @@ const createChess: Record<
   'pawn' | 'main' | 'empty',
   (color?: IChessPieceColor) => IChessPiece[]
 > = {
-  pawn: (color = 'black') => {
+  empty() {
+    return chessRowCells.map((): null => null)
+  },
+  pawn(color) {
+    if (!color) return this.empty()
+
     return chessRowCells.map((_, index): IChessPiece => {
       return `${color}-pawn-${index}`
     })
   },
-  main: (color = 'black') => {
+  main(color) {
+    if (!color) return this.empty()
+
     return chessRowCells.map((_, index): IChessPiece => {
       return `${color}-${chessCellPositionByIndex[index]}-${index}`
     })
-  },
-  empty: () => {
-    return chessRowCells.map((): null => null)
   },
 }
 

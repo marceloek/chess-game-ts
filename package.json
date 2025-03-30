@@ -16,8 +16,6 @@
     "lint": "biome check --unsafe --write"
   },
   "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "@fortawesome/react-fontawesome": "^0.2.2",
     "@radix-ui/react-dropdown-menu": "^2.1.6",
     "@radix-ui/react-slot": "^1.1.2",
     "bun-plugin-tailwind": "^0.0.15",

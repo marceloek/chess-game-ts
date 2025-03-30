@@ -13,11 +13,11 @@ interface ChessCellProps {
   location: IChessLocation
   piece: IChessPiece
   isSelected: boolean
-  handleMovement: IChessPieceMovement
+  onMovement: IChessPieceMovement
 }
 
 export function ChessCell(props: ChessCellProps) {
-  const { location, piece, isSelected, handleMovement } = props
+  const { location, piece, isSelected, onMovement } = props
   const [row, col] = location
 
   const isEvenLocation = (row + col) % 2 === 0
@@ -27,7 +27,7 @@ export function ChessCell(props: ChessCellProps) {
   return (
     <div
       className={cn(
-        'relative p-4',
+        'relative md:p-4 p-1',
         isEvenLocation ? 'bg-slate-300' : 'bg-slate-800',
         color === 'black' ? 'text-slate-600' : 'text-slate-100',
         isSelected && 'bg-emerald-300',
@@ -41,7 +41,7 @@ export function ChessCell(props: ChessCellProps) {
 
       <ChessPiece
         piecePosition={position}
-        onClick={() => handleMovement(piece, color, location)}
+        onClick={() => onMovement(piece, color, location)}
       />
 
       {/* subtitle letter (last row) */}
