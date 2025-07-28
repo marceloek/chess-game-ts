@@ -1,7 +1,6 @@
 import './index.css'
-
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { ThemeProvider } from '@/components/theme/provider'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { Home } from './pages/home'
 
 const router = createBrowserRouter([

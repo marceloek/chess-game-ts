@@ -1,5 +1,4 @@
 import { cn } from '@/lib/utils'
-
 import { ChessPiece } from './piece'
 import { ChessCellSubtitle } from './subtitle'
 import type { IChessLocation, IChessPiece, IChessPieceMovement } from './types'
