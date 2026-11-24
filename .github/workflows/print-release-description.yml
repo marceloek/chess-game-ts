@@ -1,0 +1,16 @@
+name: Print release description
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  print-description:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print release description
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const description = context.payload.release.body ?? "(sem descrição)";
+            console.log(description);
