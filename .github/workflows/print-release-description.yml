@@ -8,9 +8,15 @@ jobs:
   print-description:
     runs-on: ubuntu-latest
     steps:
-      - name: Print release description
-        uses: actions/github-script@v9
+      - name: Checkout do repositório
+        uses: actions/checkout@v7
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v7
         with:
-          script: |
-            const description = context.payload.release.body ?? "(sem descrição)";
-            console.log(description);
+          node-version: 24
+
+      - name: Imprimir descrição da release
+        run: node scripts/print-release-description.js
+        env:
+          RELEASE_DESCRIPTION: ${{ github.event.release.body }}
